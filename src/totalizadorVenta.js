@@ -1,8 +1,5 @@
-
-function retornarCantidadItems(cantidadItems)
-{
+function ObtenerCantidadItems(cantidadItems){
    return cantidadItems;
 }
-
-export default retornarCantidadItems
+export default ObtenerCantidadItems
 
