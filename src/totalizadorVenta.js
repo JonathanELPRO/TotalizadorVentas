@@ -1,8 +1,7 @@
 
-function retornarCantidadItems()
+function retornarCantidadItems(cantidadItems)
 {
-    const CINCO = 5
-    return CINCO;
+   return cantidadItems;
 }
 
 export default retornarCantidadItems
