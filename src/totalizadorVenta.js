@@ -22,4 +22,8 @@ function ObtenerPrecioDeItem(precioItem) {
   
 }
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem};
+function obtenerPrecioNeto(precioItem,cantidadItem){
+  return precioItem*cantidadItem;
+}
+
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto};

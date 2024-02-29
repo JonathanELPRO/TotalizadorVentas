@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
