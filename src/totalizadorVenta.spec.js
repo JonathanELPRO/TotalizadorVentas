@@ -11,5 +11,9 @@ describe("Totalizador ventas", () => {
     it("Debería retornar que el precio de items es 10 enviando un parametro a la funcion ", () => {
         expect(ObtenerCantidadItems(10)).toEqual(10);
     });
+    it("Debería retornar que el precio de items es 20 enviando un parametro a la funcion y verificando que el precio es mayor o igual a 0", () => {
+        expect(ObtenerPrecioDeItem(20)).toEqual(20);
+    });
+
 
 });
