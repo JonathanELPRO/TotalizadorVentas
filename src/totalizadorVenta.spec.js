@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -9,11 +9,16 @@ describe("Totalizador ventas", () => {
         expect(ObtenerCantidadItems(9)).toEqual(9);
     });
     it("Debería retornar que el precio de items es 10 enviando un parametro a la funcion ", () => {
-        expect(ObtenerCantidadItems(10)).toEqual(10);
+        expect(ObtenerPrecioDeItem(10)).toEqual(10);
     });
-    it("Debería retornar que el precio de items es 20 enviando un parametro a la funcion y verificando que el precio es mayor o igual a 0", () => {
+    it("Debería retornar que el precio neto correcto entre la cantidad y el precio de los items de items es 10 enviando un parametro a la funcion ", () => {
         expect(ObtenerPrecioDeItem(20)).toEqual(20);
     });
+    
+    it("Debería retornar que el precio neto correcto entre la cantidad y el precio de los items de items es 10 enviando un parametro a la funcion ", () => {
+        expect(obtenerPrecioNeto(5,3)).toEqual(15);
+    });
+
 
 
 });
