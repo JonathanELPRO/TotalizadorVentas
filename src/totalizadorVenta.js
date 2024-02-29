@@ -1,16 +1,22 @@
 function ObtenerCantidadItems(cantidadItems) {
-   if (cantidadItems > 0) {
+   if (cantidadItems > 0) 
+   {
        return cantidadItems;
-   }else{
+   }
+   else
+   {
        return -1;
    }
   
 }
 
 function ObtenerPrecioDeItem(precioItem) {
-   if(precioItem >= 0){
+   if(precioItem >= 0)
+   {
       return precioItem
-   }else{
+   }
+   else
+   {
       return -1;
    }
   
