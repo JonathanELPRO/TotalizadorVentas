@@ -5,4 +5,8 @@ function ObtenerCantidadItems(cantidadItems) {
    return -1;
 }
 
-export default ObtenerCantidadItems;
+function ObtenerPrecioDeItem(precioItem) {
+  return precioItem
+}
+
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem};
