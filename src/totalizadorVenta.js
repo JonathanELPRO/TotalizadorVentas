@@ -1,7 +1,9 @@
-const x = 5
-function recCantidadItenms(){
-    return x;
+
+function retornarCantidadItems()
+{
+    const CINCO = 5
+    return CINCO;
 }
 
-export default recCantidadItenms
+export default retornarCantidadItems
 
