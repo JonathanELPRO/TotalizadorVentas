@@ -8,7 +8,12 @@ function ObtenerCantidadItems(cantidadItems) {
 }
 
 function ObtenerPrecioDeItem(precioItem) {
-  return precioItem
+   if(precioItem >= 0){
+      return precioItem
+   }else{
+      return -1;
+   }
+  
 }
 
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem};
