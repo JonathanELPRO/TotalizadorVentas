@@ -22,7 +22,7 @@ function obtenerPrecioNeto(precioItem,cantidadItem){
 }
 
 function validadSiLaCantidadYPrecioSonValidos(precioItem,cantidadItem){
-   return precioItem!==-1 && cantidadItem!==-1
+   return (precioItem !== -1) && (cantidadItem !== -1)
 }
    
 
