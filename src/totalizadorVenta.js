@@ -27,9 +27,14 @@ function sonValidosLaCantidadYPrecio(precioItem,cantidadItem){
 function ObtenerDescuentos(resultadoPrecioNeto)
 {
    const tresPorciento=0.03
+   const cincoPorciento=0.05
    if(resultadoPrecioNeto >= 1000 && resultadoPrecioNeto < 3000)
    {
       return tresPorciento 
+   }
+   if(resultadoPrecioNeto >= 3000 && resultadoPrecioNeto < 7000)
+   {
+      return cincoPorciento 
    }
    
 
