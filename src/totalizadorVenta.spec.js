@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, validadSiLaCantidadYPrecioSonValidos} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadYPrecio} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -20,7 +20,7 @@ describe("Totalizador ventas", () => {
     });
     
     it("Debería retornar true si los valores de los campos son validos y false si son falsos", () => {
-        expect(validadSiLaCantidadYPrecioSonValidos(10,20)).toEqual(true);
+        expect(sonValidosLaCantidadYPrecio(10,20)).toEqual(true);
     });
     
 

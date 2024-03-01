@@ -21,9 +21,9 @@ function obtenerPrecioNeto(precioItem,cantidadItem){
   return precioItem*cantidadItem;
 }
 
-function validadSiLaCantidadYPrecioSonValidos(precioItem,cantidadItem){
+function sonValidosLaCantidadYPrecio(precioItem,cantidadItem){
    return precioItem!==-1 && cantidadItem!==-1
 }
    
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,validadSiLaCantidadYPrecioSonValidos};
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio};
