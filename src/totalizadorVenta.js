@@ -50,5 +50,9 @@ function ObtenerDescuentos(resultadoPrecioNeto)
       return quincePorciento 
    }
 }
+function obtenerPrecioNetoAplicandoDescuento(precioNeto,porcentajeDescuento){
+   return precioNeto*porcentajeDescuento
+}
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos};
+
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento};
