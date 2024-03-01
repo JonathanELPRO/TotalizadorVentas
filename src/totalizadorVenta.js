@@ -24,10 +24,13 @@ function sonValidosLaCantidadYPrecio(precioItem,cantidadItem){
    return precioItem!==-1 && cantidadItem!==-1
 }
 
-function ObtenerDescuentos(resultadoPrecioNeto){
-   if(precioNeto >= 1000 && precioNeto < 3000){
-      return 0.03 
+function ObtenerDescuentos(resultadoPrecioNeto)
+{
+   const tresPorciento=0.03
+   if(resultadoPrecioNeto >= 1000 && resultadoPrecioNeto < 3000)
+   {
+      return tresPorciento 
    }
 }
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio};
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos};
