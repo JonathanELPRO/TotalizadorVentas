@@ -3,11 +3,7 @@ function ObtenerCantidadItems(cantidadItems) {
    {
        return cantidadItems;
    }
-   else
-   {
-       return -1;
-   }
-  
+   return -1;
 }
 
 function ObtenerPrecioDeItem(precioItem) {
@@ -15,10 +11,8 @@ function ObtenerPrecioDeItem(precioItem) {
    {
       return precioItem
    }
-   else
-   {
-      return -1;
-   }
+   return -1;
+   
   
 }
 
