@@ -26,4 +26,4 @@ function validadSiLaCantidadYPrecioSonValidos(precioItem,cantidadItem){
 }
    
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto};
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,validadSiLaCantidadYPrecioSonValidos};

@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, validadSiLaCantidadYPrecioSonValidos} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -17,6 +17,10 @@ describe("Totalizador ventas", () => {
     
     it("Debería retornar que el precio neto correcto entre la cantidad y el precio de los items es 15 enviando parametros a la funcion 5 y 3 ", () => {
         expect(obtenerPrecioNeto(5,3)).toEqual(15);
+    });
+    
+    it("Debería retornar true si los valores de los campos son validos y false si son falsos", () => {
+        expect(validadSiLaCantidadYPrecioSonValidos(10,20)).toEqual(true);
     });
     
 
