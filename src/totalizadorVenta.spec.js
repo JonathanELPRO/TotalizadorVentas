@@ -27,5 +27,9 @@ describe("Totalizador ventas", () => {
         expect(ObtenerDescuentos(1001)).toEqual(0.03);
     });
 
+    it("Debería retornar un descuento del cinco% ya que el precio neto es mayor o igual a  3000 y menor a 7000", () => {
+        expect(ObtenerDescuentos(4000)).toEqual(0.05);
+    });
+
 
 });
