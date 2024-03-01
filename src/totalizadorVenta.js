@@ -1,4 +1,3 @@
-
 function ObtenerCantidadItems(cantidadItems) {
    if (cantidadItems > 0) 
    {
@@ -21,9 +20,14 @@ function obtenerPrecioNeto(precioItem,cantidadItem){
   return precioItem*cantidadItem;
 }
 
-function validadSiLaCantidadYPrecioSonValidos(precioItem,cantidadItem){
-   return (precioItem !== -1) && (cantidadItem !== -1)
+function sonValidosLaCantidadYPrecio(precioItem,cantidadItem){
+   return precioItem!==-1 && cantidadItem!==-1
 }
-   
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,validadSiLaCantidadYPrecioSonValidos};
+function ObtenerDescuentos(resultadoPrecioNeto){
+   if(precioNeto >= 1000 && precioNeto < 3000){
+      return 0.03 
+   }
+}
+
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio};
