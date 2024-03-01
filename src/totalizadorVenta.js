@@ -29,6 +29,9 @@ function ObtenerDescuentos(resultadoPrecioNeto)
    const sietePorciento = 0.07
    const diezPorciento = 0.1
    const quincePorciento= 0.15
+   if (resultadoPrecioNeto <1000) {
+      return "No tiene descuento por cantidad"
+   }
    if(resultadoPrecioNeto >= 1000 && resultadoPrecioNeto < 3000)
    {
       return tresPorciento 
@@ -50,6 +53,7 @@ function ObtenerDescuentos(resultadoPrecioNeto)
       return quincePorciento 
    }
 }
+
 function obtenerPrecioNetoAplicandoDescuento(precioNeto,porcentajeDescuento){
    return precioNeto*porcentajeDescuento
 }
