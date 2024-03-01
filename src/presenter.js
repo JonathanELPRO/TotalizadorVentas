@@ -1,23 +1,15 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto} from "./totalizadorVenta.js";
+import sumar from "./sumador";
 
-const cantidadItem = document.querySelector("#cantidadItem");
-const precioItem = document.querySelector("#precioItem");
-const form = document.querySelector("#totalizador-form");
-const resultadoPrecioNeto = document.querySelector("#resultadoPrecioNeto");
+const first = document.querySelector("#primer-numero");
+const second = document.querySelector("#segundo-numero");
+const form = document.querySelector("#sumar-form");
+const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const cantidadItemValue = ObtenerCantidadItems(Number.parseInt(cantidadItem.value));
-  const precioItemValue = ObtenerPrecioDeItem(Number.parseInt(precioItem.value));
-  if (cantidadItemValue===-1 || precioItemValue===-1){
-    precioItem.value = "";
-    cantidadItem.value="";
-    resultadoPrecioNeto.innerHTML = "<p>" +"Porfavor ingres valores validos"+ "</p>";
-  }
-  else{
-    resultadoPrecioNeto.innerHTML = "<p>" + obtenerPrecioNeto(cantidadItemValue,precioItemValue) + "</p>";
-  }
-  
-});
+  const firstNumber = Number.parseInt(first.value);
+  const secondNumber = Number.parseInt(second.value);
 
+  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+});

@@ -1,3 +1,4 @@
+
 function ObtenerCantidadItems(cantidadItems) {
    if (cantidadItems > 0) 
    {
@@ -19,5 +20,10 @@ function ObtenerPrecioDeItem(precioItem) {
 function obtenerPrecioNeto(precioItem,cantidadItem){
   return precioItem*cantidadItem;
 }
+
+function validadSiLaCantidadYPrecioSonValidos(precioItem,cantidadItem){
+   return precioItem!==-1 && cantidadItem!==-1
+}
+   
 
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto};
