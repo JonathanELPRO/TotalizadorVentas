@@ -28,6 +28,7 @@ function ObtenerDescuentos(resultadoPrecioNeto)
 {
    const tresPorciento = 0.03
    const cincoPorciento = 0.05
+   const sietePorciento = 0.07
 
    if(resultadoPrecioNeto >= 1000 && resultadoPrecioNeto < 3000)
    {
@@ -36,6 +37,10 @@ function ObtenerDescuentos(resultadoPrecioNeto)
    if(resultadoPrecioNeto >= 3000 && resultadoPrecioNeto < 7000)
    {
       return cincoPorciento 
+   }
+   if(resultadoPrecioNeto >= 7000 && resultadoPrecioNeto < 10000)
+   {
+      return sietePorciento 
    }
 
 }
