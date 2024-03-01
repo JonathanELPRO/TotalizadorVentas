@@ -23,7 +23,7 @@ describe("Totalizador ventas", () => {
         expect(sonValidosLaCantidadYPrecio(10,20)).toEqual(true);
     });
     
-    it("Debería retornar un descuento del 3% ya que el precio neto es mayor o igual a 1000 y menor a 3000", () => {
+    it("Debería retornar un descuento del tres% ya que el precio neto es mayor o igual a 1000 y menor a 3000", () => {
         expect(ObtenerDescuentos(1001)).toEqual(0.03);
     });
 

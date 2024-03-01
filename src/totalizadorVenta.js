@@ -31,6 +31,8 @@ function ObtenerDescuentos(resultadoPrecioNeto)
    {
       return tresPorciento 
    }
+   
+
 }
 
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos};
