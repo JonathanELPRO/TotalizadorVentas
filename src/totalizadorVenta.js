@@ -12,8 +12,6 @@ function ObtenerPrecioDeItem(precioItem) {
       return precioItem
    }
    return -1;
-   
-  
 }
 
 function obtenerPrecioNeto(precioItem,cantidadItem){
@@ -42,7 +40,6 @@ function ObtenerDescuentos(resultadoPrecioNeto)
    {
       return sietePorciento 
    }
-
 }
 
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos};
