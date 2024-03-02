@@ -61,16 +61,16 @@ function obtenerPrecioNetoAplicandoDescuento(precioNeto,porcentajeDescuento){
 function ObtenerDescuentosPorCategoria(Categoria){
    const Dosporciento = 0.02
    const CeroPorciento = 0
-   const UnoPuntoCinco = 1.5
-   const UnPorciento = 1
+   const UnoPuntoCinco = 0.015
+   const UnPorciento = 0.01
    
-   if(Categoria === "Alimento"){
+   if(Categoria === "Alimentos"){
       return Dosporciento
    }
-   if(Categoria === "Bebidas alcholicas"){
+   if(Categoria === "Bebidas alcoholicas"){
       return CeroPorciento
    }
-   if(Categoria === "Materia de escritorio"){
+   if(Categoria === "Material de escritorio"){
       return UnoPuntoCinco
    }
    if(Categoria === "Muebles"){
