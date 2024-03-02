@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado, ObtenerPesoVolumetrico, obtenerCostoDeEnvioPorUnidad, obtenerCostoEnvioNeto, obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento,obtenerDescuentoPor3Factores} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado, ObtenerPesoVolumetrico, obtenerCostoDeEnvioPorUnidad, obtenerCostoEnvioNeto, obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento,obtenerDescuentoPor3Factores,obtenerPrecioTotalaPagar} from "./totalizadorVenta.js";
 
 const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");
@@ -21,6 +21,8 @@ const resultadoPrecioDeEnvioNeto=document.querySelector("#resultadoPrecioDeEnvio
 const resultadoDescuentoPorcentualEnvioPorCliente=document.querySelector("#resultadoDescuentoPorcentualEnvioPorCliente")
 const resultadoDescuentoEnvioPorCliente=document.querySelector("#resultadoDescuentoEnvioPorCliente")
 const descuentoMontoFijo=document.querySelector("#descuentoMontoFijo")
+const precioTotal=document.querySelector("#precioTotal")
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -56,6 +58,16 @@ form.addEventListener("submit", (event) => {
     resultadoDescuentoEnvioPorCliente.innerHTML=obtenerEnvioNetoAplicandoDescuento(resultadoPrecioDeEnvioNeto.textContent,obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente.value))
 
     descuentoMontoFijo.innerHTML=obtenerDescuentoPor3Factores(tipoCliente.value,resultadoPrecioNeto.textContent,categoriaItem.value)
+    console.log(resultadoPrecioNeto.textContent)
+    console.log(resultadoDescuentoPorPrecioNeto.textContent)
+    console.log(resultadoDescuentoPorCategoria.textContent)
+    console.log(resultadoImpuestoPorCodigoEstado.textContent)
+    console.log(resultadoImpuestoPorCategoria.textContent)
+    console.log(resultadoPrecioDeEnvioNeto.textContent)
+    console.log(resultadoDescuentoEnvioPorCliente.textContent)
+    console.log(descuentoMontoFijo.textContent)
+    
+    precioTotal.innerHTML = obtenerPrecioTotalaPagar(resultadoPrecioNeto.textContent,resultadoDescuentoPorPrecioNeto.textContent,resultadoDescuentoPorCategoria.textContent,resultadoImpuestoPorCodigoEstado.textContent,resultadoImpuestoPorCategoria.textContent,resultadoPrecioDeEnvioNeto.textContent,resultadoDescuentoEnvioPorCliente.textContent,descuentoMontoFijo.textContent)
   }
   else{
     precioItem.value = "";

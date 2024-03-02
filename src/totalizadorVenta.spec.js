@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerDescuentoPor3Factores} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerDescuentoPor3Factores,obtenerPrecioTotalaPagar} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -150,5 +150,20 @@ describe("Totalizador ventas", () => {
         expect(obtenerDescuentoPor3Factores("Especial",7001,"Electronicos")).toEqual(200)
     })
 
+    it("Debería retornar el precio total calculado correctamente", () => {
+        const precioNeto = 8000.00;
+        const descuentoPrecioNeto = 500.00;
+        const descuentoCategoria = 100.00;
+        const impuestoEstado = 50.00;
+        const impuestoCategoria = 120.00;
+        const costoEnvioNeto = 30.00;
+        const descuentoEnvioCliente = 10.00;
+        const descuentoMontoFijo = 200.00;
+        const resultadoEsperado = (precioNeto - descuentoPrecioNeto - descuentoCategoria + impuestoEstado + impuestoCategoria + costoEnvioNeto - descuentoEnvioCliente - descuentoMontoFijo).toFixed(2);
+        expect(obtenerPrecioTotalaPagar(precioNeto, descuentoPrecioNeto, descuentoCategoria, impuestoEstado, impuestoCategoria, costoEnvioNeto, descuentoEnvioCliente, descuentoMontoFijo)).toEqual(resultadoEsperado);
+    });
+    
+    
+    
     
 })

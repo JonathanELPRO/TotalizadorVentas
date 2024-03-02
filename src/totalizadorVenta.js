@@ -248,4 +248,19 @@ function obtenerDescuentoPor3Factores(tipoCliente,precioNeto,categoria)
       return 0
    }
 }
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento,obtenerDescuentoPor3Factores};
+function obtenerPrecioTotalaPagar(precioNeto, descuentoPrecioNeto, descuentoCategoria, impuestoEstado, impuestoCategoria, costoEnvioNeto, descuentoEnvioCliente, descuentoMontoFijo) {
+   const precioNetoFloat = parseFloat(precioNeto);
+   const descuentoPrecioNetoFloat = parseFloat(descuentoPrecioNeto);
+   const descuentoCategoriaFloat = parseFloat(descuentoCategoria);
+   const impuestoEstadoFloat = parseFloat(impuestoEstado);
+   const impuestoCategoriaFloat = parseFloat(impuestoCategoria);
+   const costoEnvioNetoFloat = parseFloat(costoEnvioNeto);
+   const descuentoEnvioClienteFloat = parseFloat(descuentoEnvioCliente);
+   const descuentoMontoFijoFloat = parseFloat(descuentoMontoFijo);
+
+   const precioTotal = precioNetoFloat - descuentoPrecioNetoFloat - descuentoCategoriaFloat + impuestoEstadoFloat + impuestoCategoriaFloat + costoEnvioNetoFloat - descuentoEnvioClienteFloat - descuentoMontoFijoFloat;
+
+   return precioTotal.toFixed(2);
+}
+
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento,obtenerDescuentoPor3Factores,obtenerPrecioTotalaPagar};
