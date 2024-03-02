@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -130,5 +130,10 @@ describe("Totalizador ventas", () => {
     it("Deberia retornar el costo de envio neto igual a 15 dado que la cantidad de items es 3 y el costo de envio por unidad es de 5$", () => {
         expect(obtenerCostoEnvioNeto(5,3)).toEqual(15);
     });
+    it("Deberia retornar un descuento porcentual del 0% en el costo de envio neto dado un cliente Normal", () => {
+        expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Normal")).toEqual(0);
+    });
+
+
     
 })
