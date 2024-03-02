@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  div {
+    margin-bottom: 16px;
+  }
+  
+  p {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Resultados */
+  #resultadoPrecioNeto,
+  #resultadoDescuentoPorcentualPorPrecioNeto,
+  #resultadoDescuentoPorPrecioNeto,
+  #resultadoDescuentoPorcentualPorCategoria,
+  #resultadoDescuentoPorCategoria,
+  #resultadoImpuestoPorcentualPorCategoria,
+  #resultadoImpuestoPorCategoria,
+  #resultadoImpuestoPorcentualPorCodigoEstado,
+  #resultadoImpuestoPorCodigoEstado,
+  #resultadoPrecioDeEnvioPorUnidad,
+  #resultadoPrecioDeEnvioNeto,
+  #resultadoDescuentoPorcentualEnvioPorCliente,
+  #resultadoDescuentoEnvioPorCliente,
+  #descuentoMontoFijo,
+  #precioTotal {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  
