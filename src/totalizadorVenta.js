@@ -189,6 +189,11 @@ function obtenerCostoDeEnvioPorUnidad(pesoVolumetrico)
    {
       return seispuntocinco
    }
+   if (pesoVolumetrico>=101 && pesoVolumetrico<=200)
+   {
+      return ocho
+   }
+
    
 }
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad};
