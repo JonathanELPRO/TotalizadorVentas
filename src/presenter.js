@@ -4,8 +4,8 @@ const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");
 const form = document.querySelector("#totalizador-form");
 const resultadoPrecioNeto = document.querySelector("#resultadoPrecioNeto");
-const resultadoDescuentoPorCantidad = document.querySelector("#resultadoDescuentoPorCantidad");
-const resultadoDescuentoPorcentualPorCantidad=document.querySelector("#resultadoDescuentoPorcentualPorCantidad");
+const resultadoDescuentoPorPrecioNeto = document.querySelector("#resultadoDescuentoPorPrecioNeto");
+const resultadoDescuentoPorcentualPorPrecioNeto=document.querySelector("#resultadoDescuentoPorcentualPorPrecioNeto");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -17,13 +17,13 @@ form.addEventListener("submit", (event) => {
     resultadoPrecioNeto.innerHTML = obtenerPrecioNeto(cantidadItemValue,precioItemValue).toString();
     console.log(resultadoPrecioNeto.textContent)
     if (ObtenerDescuentos(resultadoPrecioNeto.textContent)!=="No tiene descuento por cantidad"){
-      resultadoDescuentoPorCantidad.innerHTML = obtenerPrecioNetoAplicandoDescuento(Number.parseFloat(resultadoPrecioNeto.textContent),ObtenerDescuentos(resultadoPrecioNeto.textContent)).toString() ; 
-      resultadoDescuentoPorcentualPorCantidad.innerHTML=(ObtenerDescuentos(resultadoPrecioNeto.textContent)*100).toString()
+      resultadoDescuentoPorPrecioNeto.innerHTML = obtenerPrecioNetoAplicandoDescuento(Number.parseFloat(resultadoPrecioNeto.textContent),ObtenerDescuentos(resultadoPrecioNeto.textContent)).toString() ; 
+      resultadoDescuentoPorcentualPorPrecioNeto.innerHTML=(ObtenerDescuentos(resultadoPrecioNeto.textContent)*100).toString()
     }
     else
     {
-      resultadoDescuentoPorCantidad.innerHTML = 0;
-      resultadoDescuentoPorcentualPorCantidad.innerHTML=0;
+      resultadoDescuentoPorPrecioNeto.innerHTML = 0;
+      resultadoDescuentoPorcentualPorPrecioNeto.innerHTML=0;
     }
     
     

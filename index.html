@@ -6,13 +6,24 @@
       <input type="text" id="cantidadItem" />
       <label for="precioItem">Precio unitario</label>
       <input type="text" id="precioItem" />
+      <label for="categoriaItem">Categoria items</label>
+      <input type="text" id="categoriaItem" />
       <input type="submit" value="Totalizar" id="totalizar-button" />
     </form>
     <div id="resultadoPrecioNeto"></div>
-    <p>Porcentaje de descuento</p>
-    <div id="resultadoDescuentoPorcentualPorCantidad"></div>
-    <p>Cantidad descontada</p>
-    <div id="resultadoDescuentoPorCantidad"></div>
+
+
+    <p>Porcentaje de descuento por precio neto</p>
+    <div id="resultadoDescuentoPorcentualPorPrecioNeto"></div>
+    <p>Cantidad descontada por precio neto</p>
+    <div id="resultadoDescuentoPorPrecioNeto"></div>
+
+    <p>Porcentaje de descuento por categoria</p>
+    <div id="resultadoDescuentoPorcentualPorCategoria"></div>
+    <p>Cantidad descontada por precio neto</p>
+    <div id="resultadoDescuentoPorCategoria"></div>
+
+
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
