@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerDescuentoPor3Factores} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -143,6 +143,9 @@ describe("Totalizador ventas", () => {
     it("Deberia retornar un descuento porcentual del 1.5% en el costo de envio neto dado un cliente Especial", () => {
         expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Especial")).toEqual(0.015);
     });
+    it("Deberia retornar un descuento de 100 dolares dato que el tipo de cliente es regular el precio neto es mayor a 3000 y la categoria es aliemntos",()=>{
+        expect(obtenerDescuentoPor3Factores("Recurrente",3001,"Alimentos")).toEqual(100)
+    })
 
     
 })
