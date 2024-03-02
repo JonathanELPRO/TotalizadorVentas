@@ -59,30 +59,37 @@ function obtenerPrecioNetoAplicandoDescuento(precioNeto,porcentajeDescuento){
 }
 
 function ObtenerDescuentosPorCategoria(Categoria){
-   const Dosporciento = 0.02
+   const DosPorciento = 0.02
    const CeroPorciento = 0
-   const UnoPuntoCinco = 0.015
+   const UnoPuntoCincoPorciento = 0.015
    const UnPorciento = 0.01
    
-   if(Categoria === "Alimentos"){
-      return Dosporciento
+   if(Categoria === "Alimentos")
+   {
+      return DosPorciento
    }
-   if(Categoria === "Bebidas alcoholicas"){
+   if(Categoria === "Bebidas alcoholicas")
+   {
       return CeroPorciento
    }
-   if(Categoria === "Material de escritorio"){
-      return UnoPuntoCinco
+   if(Categoria === "Material de escritorio")
+   {
+      return UnoPuntoCincoPorciento
    }
-   if(Categoria === "Muebles"){
+   if(Categoria === "Muebles")
+   {
       return CeroPorciento
    }
-   if(Categoria === "Electronicos"){
+   if(Categoria === "Electronicos")
+   {
       return UnPorciento
    }
-   if(Categoria === "Vestimenta"){
+   if(Categoria === "Vestimenta")
+   {
       return CeroPorciento
    }
-   if(Categoria === "Varios"){
+   if(Categoria === "Varios")
+   {
       return CeroPorciento
    }
    
