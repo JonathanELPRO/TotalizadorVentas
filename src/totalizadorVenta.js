@@ -135,5 +135,14 @@ function obtenerPrecioNetoConDescuentoAplicandoImpuesto(precioNetoConDescuento,p
    return precioNetoConDescuento*porcentajeImpuesto
 }
 
+function ObtenerImpuestoPorEstado(CodigoEstado) {
+   const UT = 0.0665;
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto};
+   if (CodigoEstado === "UT") {
+       return UT;
+   } else{
+       return 0;
+   }
+}
+
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado};
