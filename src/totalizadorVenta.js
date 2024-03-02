@@ -139,6 +139,8 @@ function ObtenerImpuestoPorEstado(CodigoEstado) {
    const UT = 0.0665;
    const NV = 0.08;
    const TX = 0.0625;
+   const AL = 0.04;
+   const CA = 0.0825;
 
    if (CodigoEstado === "UT") 
    {
@@ -149,6 +151,13 @@ function ObtenerImpuestoPorEstado(CodigoEstado) {
    }else if (CodigoEstado === "NV") 
    {
       return NV;
+   }
+   else if (estado === "AL") 
+   {
+      return AL;
+   } else if (estado === "CA") 
+   {
+      return CA;
    }
    else
    {
