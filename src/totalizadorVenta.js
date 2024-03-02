@@ -141,7 +141,8 @@ function ObtenerImpuestoPorEstado(CodigoEstado) {
    if (CodigoEstado === "UT") 
    {
       return UT;
-   } else if (estado === "NV") {
+   } else if (estado === "NV") 
+   {
       return NV;
    }
    else
