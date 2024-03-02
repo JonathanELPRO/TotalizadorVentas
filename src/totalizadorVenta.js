@@ -233,4 +233,11 @@ function obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente){
 function obtenerEnvioNetoAplicandoDescuento(envioNeto,porcentajeDescuento){
    return envioNeto*porcentajeDescuento
 }
+function obtenerDescuentoPor3Factores(tipoCliente,precioNeto,categoria)
+{
+   if (tipoCliente==="Recurrente" && precioNeto>3000 && categoria==="Alimentos")
+   {
+      return 100
+   }
+}
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento};
