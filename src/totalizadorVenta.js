@@ -94,31 +94,39 @@ function ObtenerDescuentosPorCategoria(Categoria){
    }
 }
 function ObtenerImpuestoPorCategoria(Categoria) {
+
    const CeroPorciento = 0;
    const SietePorciento = 0.07;
    const TresPorciento = 0.03;
    const CuatroPorciento = 0.04;
    const DosPorciento = 0.02;
 
-   if (Categoria === "Alimentos") {
+   if (Categoria === "Alimentos") 
+   {
        return CeroPorciento;
    }
-   if (Categoria === "Bebidas alcoholicas") {
+   if (Categoria === "Bebidas alcoholicas") 
+   {
        return SietePorciento;
    }
-   if (Categoria === "Material de escritorio") {
+   if (Categoria === "Material de escritorio") 
+   {
        return CeroPorciento;
    }
-   if (Categoria === "Muebles") {
+   if (Categoria === "Muebles") 
+   {
        return TresPorciento;
    }
-   if (Categoria === "Electronicos") {
+   if (Categoria === "Electronicos") 
+   {
        return CuatroPorciento;
    }
-   if (Categoria === "Vestimenta") {
+   if (Categoria === "Vestimenta") 
+   {
        return DosPorciento;
    }
-   if (Categoria === "Varios") {
+   if (Categoria === "Varios") 
+   {
        return CeroPorciento;
    }
 }
