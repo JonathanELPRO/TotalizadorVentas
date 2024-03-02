@@ -221,7 +221,7 @@ function obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente){
    {
       return ceropuntocinco
    }
-   if (tipoCliente==="Antiguo recurrente")
+   else if (tipoCliente==="Antiguo recurrente")
    {
       return uno
    }
