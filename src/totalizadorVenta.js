@@ -208,4 +208,14 @@ function ObtenerPesoVolumetrico(pesoVolumetrico) {
 function obtenerCostoEnvioNeto(costoEnvioPorUnidad,cantidadItems){
    return costoEnvioPorUnidad*cantidadItems
 }
+function obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente){
+   const cero=0
+   const ceropuntocinco=0.5
+   const uno=1
+   const unopuntocinco=1.5
+   if (tipoCliente==="Normal")
+   {
+      return cero
+   }
+}
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto};
