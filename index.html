@@ -7,7 +7,15 @@
       <label for="precioItem">Precio unitario</label>
       <input type="text" id="precioItem" />
       <label for="categoriaItem">Categoria items</label>
-      <input type="text" id="categoriaItem" />
+      <select id="categoriaItem">
+        <option value="Alimentos">Alimentos</option>
+        <option value="Bebidas alcoholicas">Bebidas alcoholicas</option>
+        <option value="Material de escritorio">Material de escritorio</option>
+        <option value="Muebles">Muebles</option>
+        <option value="Electronicos">Electronicos</option>
+        <option value="Vestimenta">Vestimenta</option>
+        <option value="Varios">Varios</option>
+      </select>
       <input type="submit" value="Totalizar" id="totalizar-button" />
     </form>
     <div id="resultadoPrecioNeto"></div>
@@ -20,7 +28,7 @@
 
     <p>Porcentaje de descuento por categoria</p>
     <div id="resultadoDescuentoPorcentualPorCategoria"></div>
-    <p>Cantidad descontada por precio neto</p>
+    <p>Cantidad descontada por categoria</p>
     <div id="resultadoDescuentoPorCategoria"></div>
 
 

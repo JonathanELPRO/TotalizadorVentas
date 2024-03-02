@@ -2,11 +2,13 @@ import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLa
 
 const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");
+const categoriaItem=document.querySelector("#categoriaItem");
 const form = document.querySelector("#totalizador-form");
 const resultadoPrecioNeto = document.querySelector("#resultadoPrecioNeto");
 const resultadoDescuentoPorPrecioNeto = document.querySelector("#resultadoDescuentoPorPrecioNeto");
 const resultadoDescuentoPorcentualPorPrecioNeto=document.querySelector("#resultadoDescuentoPorcentualPorPrecioNeto");
-
+const resultadoDescuentoPorCategoria = document.querySelector("#resultadoDescuentoPorCategoria");
+const resultadoDescuentoPorcentualPorCategoria = document.querySelector("#resultadoDescuentoPorcentualPorCategoria");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -25,6 +27,8 @@ form.addEventListener("submit", (event) => {
       resultadoDescuentoPorPrecioNeto.innerHTML = 0;
       resultadoDescuentoPorcentualPorPrecioNeto.innerHTML=0;
     }
+    resultadoDescuentoPorCategoria.innerHTML = obtenerPrecioNetoAplicandoDescuento(Number.parseFloat(resultadoPrecioNeto.textContent),ObtenerDescuentosPorCategoria(categoriaItem.value)).toString() ; 
+    resultadoDescuentoPorcentualPorCategoria.innerHTML=(ObtenerDescuentosPorCategoria(categoriaItem.value)*100).toString()
     
     
   }
