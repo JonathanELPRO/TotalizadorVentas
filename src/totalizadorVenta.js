@@ -161,7 +161,7 @@ function ObtenerImpuestoPorEstado(CodigoEstado) {
    }
    else
    {
-      return 0;
+      return "Ingrese un codigo de Estado valido";
    }
 }
 
