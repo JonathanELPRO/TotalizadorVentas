@@ -239,7 +239,7 @@ function obtenerDescuentoPor3Factores(tipoCliente,precioNeto,categoria)
    {
       return 100
    }
-   if (tipoCliente==="Especial" && precioNeto>7000 && categoria==="Electronicos")
+   else if (tipoCliente==="Especial" && precioNeto>7000 && categoria==="Electronicos")
    {
       return 200
    }
