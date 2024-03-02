@@ -112,5 +112,8 @@ describe("Totalizador ventas", () => {
     it("Debería retornar un costo de envio por unidad igual a 3.5$, probando con un valor de peso volumetrico igual a 15", () => {
         expect(obtenerCostoDeEnvioPorUnidad(15)).toEqual(3.5);
     });
+    it("Debería retornar un costo de envio por unidad igual a 5$, probando con un valor de peso volumetrico igual a 31", () => {
+        expect(obtenerCostoDeEnvioPorUnidad(31)).toEqual(5);
+    });
     
 })
