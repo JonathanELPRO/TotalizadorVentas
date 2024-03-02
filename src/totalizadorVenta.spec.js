@@ -146,6 +146,9 @@ describe("Totalizador ventas", () => {
     it("Deberia retornar un descuento de 100 dolares dato que el tipo de cliente es regular el precio neto es mayor a 3000 y la categoria es aliemntos",()=>{
         expect(obtenerDescuentoPor3Factores("Recurrente",3001,"Alimentos")).toEqual(100)
     })
+    it("Deberia retornar un descuento de 200 dolares dato que el tipo de cliente es especial el precio neto es mayor a 7000 y la categoria es electronicos",()=>{
+        expect(obtenerDescuentoPor3Factores("Especial",7001,"Electronicos")).toEqual(200)
+    })
 
     
 })
