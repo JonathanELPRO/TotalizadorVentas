@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadYPrecio,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadYPrecio,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -105,6 +105,9 @@ describe("Totalizador ventas", () => {
     });
     it("Debería retornar un impuesto del 8.25% ya que el estado es CA", () => {
         expect(ObtenerImpuestoPorEstado('CA')).toEqual(0.0825);
+    });
+    it("Debería retornar un costo de envio por unidad igual a 0$, probando con un valor de peso volumetrico igual a 5", () => {
+        expect(obtenerCostoDeEnvioPorUnidad(5)).toEqual(0);
     });
     
 })
