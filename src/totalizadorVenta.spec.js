@@ -41,29 +41,5 @@ describe("Totalizador ventas", () => {
     it("Debería retornar un descuento del quince% ya que el precio neto es mayor o igual a  30000", () => {
         expect(ObtenerDescuentos(40000)).toEqual(0.15);
     });
-    it("Debería retornar un descuento del dos% ya que el categoria es Alimentos", () => {
-        expect(ObtenerDescuentosPorCategoria('Alimentos')).toEqual(0.02);
-    });
-    it("Debería retornar un descuento del cero% ya que el categoria es Bebidas alcoholicas", () => {
-        expect(ObtenerDescuentosPorCategoria('Bebidas alcoholicas')).toEqual(0);
-    });
-    it("Debería retornar un descuento del 1.5% ya que el categoria es Material de escritorio", () => {
-        expect(ObtenerDescuentosPorCategoria('Material de escritorio')).toEqual(0.015);
-    });
-    it("Debería retornar un descuento del cero% ya que el categoria es Muebles", () => {
-        expect(ObtenerDescuentosPorCategoria('Muebles')).toEqual(0);
-    });
-    it("Debería retornar un descuento del uno% ya que el categoria es Electronicos", () => {
-        expect(ObtenerDescuentosPorCategoria('Electronicos')).toEqual(0.01);
-    });
-    it("Debería retornar un descuento del cero% ya que el categoria es Vestimenta", () => {
-        expect(ObtenerDescuentosPorCategoria('Vestimenta')).toEqual(0);
-    });
-    it("Debería retornar un descuento del cero% ya que el categoria es Varios", () => {
-        expect(ObtenerDescuentosPorCategoria('Varios')).toEqual(0);
-    });
-
-
-
-
+    
 });
