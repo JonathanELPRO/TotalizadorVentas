@@ -159,10 +159,20 @@ function ObtenerImpuestoPorEstado(CodigoEstado) {
    {
       return CA;
    }
-   else
-   {
-      return "Ingrese un codigo de Estado valido";
-   }
 }
-
+function obtenerCostoDeEnvioPorUnidad(pesoVolumetrico)
+{
+   const cero=0
+   const trespuntocinco=3.5
+   const cinco=5
+   const seis=6
+   const seispuntocinco=6.5
+   const ocho=8
+   const nueve=9
+   if (pesoVolumetrico>=0 && pesoVolumetrico<=10)
+   {
+      return cero
+   }
+   
+}
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado};
