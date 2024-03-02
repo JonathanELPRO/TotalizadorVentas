@@ -1,9 +1,10 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadYPrecio,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado, ObtenerPesoVolumetrico, obtenerCostoDeEnvioPorUnidad, obtenerCostoEnvioNeto} from "./totalizadorVenta.js";
 
 const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");
 const categoriaItem=document.querySelector("#categoriaItem");
 const codigoEstado=document.querySelector("#codigoEstado");
+const pesoVolumetrico=document.querySelector("#pesoVolumetrico");
 const form = document.querySelector("#totalizador-form");
 const resultadoPrecioNeto = document.querySelector("#resultadoPrecioNeto");
 const resultadoDescuentoPorPrecioNeto = document.querySelector("#resultadoDescuentoPorPrecioNeto");
@@ -14,12 +15,15 @@ const resultadoImpuestoPorCategoria = document.querySelector("#resultadoImpuesto
 const resultadoImpuestoPorcentualPorCategoria = document.querySelector("#resultadoImpuestoPorcentualPorCategoria");
 const resultadoImpuestoPorcentualPorCodigoEstado=document.querySelector("#resultadoImpuestoPorcentualPorCodigoEstado");
 const resultadoImpuestoPorCodigoEstado=document.querySelector("#resultadoImpuestoPorCodigoEstado");
+const resultadoPrecioDeEnvioPorUnidad=document.querySelector("#resultadoPrecioDeEnvioPorUnidad");
+const resultadoPrecioDeEnvioNeto=document.querySelector("#resultadoPrecioDeEnvioNeto");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const cantidadItemValue = ObtenerCantidadItems(Number.parseFloat(cantidadItem.value));
   const precioItemValue = ObtenerPrecioDeItem(Number.parseFloat(precioItem.value));
-  if (sonValidosLaCantidadYPrecio(precioItemValue,cantidadItemValue)){
+  const pesoVolumetricoValue=ObtenerPesoVolumetrico(Number.parseFloat(pesoVolumetrico.value))
+  if (sonValidosLaCantidadElPrecioYPeso(precioItemValue,cantidadItemValue,pesoVolumetricoValue)){
     
     resultadoPrecioNeto.innerHTML = obtenerPrecioNeto(cantidadItemValue,precioItemValue).toString();
     console.log(resultadoPrecioNeto.textContent)
@@ -40,10 +44,14 @@ form.addEventListener("submit", (event) => {
 
     resultadoImpuestoPorCodigoEstado.innerHTML = obtenerPrecioNetoConDescuentoAplicandoImpuesto(Number.parseFloat(resultadoPrecioNeto.textContent)-Number.parseFloat(resultadoDescuentoPorPrecioNeto.textContent)-Number.parseFloat(resultadoDescuentoPorCategoria.textContent),ObtenerImpuestoPorEstado(codigoEstado.value)).toString() ; 
     resultadoImpuestoPorcentualPorCodigoEstado.innerHTML=(Number.parseFloat(ObtenerImpuestoPorEstado(codigoEstado.value)*100)).toString()
+
+    resultadoPrecioDeEnvioPorUnidad.innerHTML = obtenerCostoDeEnvioPorUnidad(pesoVolumetricoValue)
+    resultadoPrecioDeEnvioNeto.innerHTML=obtenerCostoEnvioNeto(resultadoPrecioDeEnvioPorUnidad.textContent,cantidadItemValue)
   }
   else{
     precioItem.value = "";
     cantidadItem.value="";
+    pesoVolumetrico.value="";
     resultadoPrecioNeto.innerHTML = "<p>" +"Porfavor ingrese valores validos"+ "</p>";
   }
   

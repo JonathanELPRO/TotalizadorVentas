@@ -23,6 +23,8 @@
         <option value="AL">AL</option>
         <option value="CA">CA</option>
       </select>
+      <label for="pesoVolumetrico">Peso volumetrico</label>
+      <input type="text" id="pesoVolumetrico" />
       <input type="submit" value="Totalizar" id="totalizar-button" />
     </form>
     <div id="resultadoPrecioNeto"></div>
@@ -47,7 +49,12 @@
     <div id="resultadoImpuestoPorcentualPorCodigoEstado"></div>
     <p>Cantidad de impuesto por codigo de estado</p>
     <div id="resultadoImpuestoPorCodigoEstado"></div>
-    
+
+    <p>Precio de envio por unidad</p>
+    <div id="resultadoPrecioDeEnvioPorUnidad"></div>
+    <p>Precio de envio neto</p>
+    <div id="resultadoPrecioDeEnvioNeto"></div>
+
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>

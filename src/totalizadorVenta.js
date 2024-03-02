@@ -18,8 +18,8 @@ function obtenerPrecioNeto(precioItem,cantidadItem){
   return precioItem*cantidadItem;
 }
 
-function sonValidosLaCantidadYPrecio(precioItem,cantidadItem){
-   return precioItem!==-1 && cantidadItem!==-1
+function sonValidosLaCantidadElPrecioYPeso(precioItem,cantidadItem, pesoVolumetrico){
+   return precioItem!==-1 && cantidadItem!==-1 && pesoVolumetrico!==-1
 }
 
 function ObtenerDescuentos(resultadoPrecioNeto)
@@ -199,7 +199,7 @@ function obtenerCostoDeEnvioPorUnidad(pesoVolumetrico)
    }
 }
 function ObtenerPesoVolumetrico(pesoVolumetrico) {
-   if(pesoVolumetrico > 0)
+   if(pesoVolumetrico >= 0)
    {
       return pesoVolumetrico
    }
@@ -208,4 +208,4 @@ function ObtenerPesoVolumetrico(pesoVolumetrico) {
 function obtenerCostoEnvioNeto(costoEnvioPorUnidad,cantidadItems){
    return costoEnvioPorUnidad*cantidadItems
 }
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto};
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto};

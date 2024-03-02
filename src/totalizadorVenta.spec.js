@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadYPrecio,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -20,7 +20,7 @@ describe("Totalizador ventas", () => {
     });
     
     it("Debería retornar true si los valores de los campos son validos y false si son falsos", () => {
-        expect(sonValidosLaCantidadYPrecio(10,20)).toEqual(true);
+        expect(sonValidosLaCantidadElPrecioYPeso(10,20,30)).toEqual(true);
     });
     
     it("Debería retornar un descuento del tres% ya que el precio neto es mayor o igual a 1000 y menor a 3000", () => {
