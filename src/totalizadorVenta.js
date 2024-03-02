@@ -92,7 +92,7 @@ function ObtenerDescuentosPorCategoria(Categoria){
    {
       return CeroPorciento
    }
-   
 }
+
 
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria};
