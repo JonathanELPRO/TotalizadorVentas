@@ -63,4 +63,32 @@ describe("Totalizador ventas", () => {
     it("Debería retornar un descuento del cero% ya que el categoria es Varios", () => {
         expect(ObtenerDescuentosPorCategoria('Varios')).toEqual(0);
     });
+    it("Debería retornar un impuesto del cero% ya que la categoría es Alimentos", () => {
+        expect(ObtenerImpuestoPorCategoria('Alimentos')).toEqual(0);
+    });
+    
+    it("Debería retornar un impuesto del 7% ya que la categoría es Bebidas alcoholicas", () => {
+        expect(ObtenerImpuestoPorCategoria('Bebidas alcoholicas')).toEqual(0.07);
+    });
+    
+    it("Debería retornar un impuesto del 0% ya que la categoría es Material de escritorio", () => {
+        expect(ObtenerImpuestoPorCategoria('Material de escritorio')).toEqual(0);
+    });
+    
+    it("Debería retornar un impuesto del 3% ya que la categoría es Muebles", () => {
+        expect(ObtenerImpuestoPorCategoria('Muebles')).toEqual(0.03);
+    });
+    
+    it("Debería retornar un impuesto del 4% ya que la categoría es Electronicos", () => {
+        expect(ObtenerImpuestoPorCategoria('Electronicos')).toEqual(0.04);
+    });
+    
+    it("Debería retornar un impuesto del 2% ya que la categoría es Vestimenta", () => {
+        expect(ObtenerImpuestoPorCategoria('Vestimenta')).toEqual(0.02);
+    });
+    
+    it("Debería retornar un impuesto del 0% ya que la categoría es Varios", () => {
+        expect(ObtenerImpuestoPorCategoria('Varios')).toEqual(0);
+    });
+    
 })
