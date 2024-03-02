@@ -177,7 +177,7 @@ function obtenerCostoDeEnvioPorUnidad(pesoVolumetrico)
    {
       return trespuntocinco
    }
-   if (pesoVolumetrico>=21 && pesoVolumetrico<=40)
+   else if (pesoVolumetrico>=21 && pesoVolumetrico<=40)
    {
       return cinco
    }
