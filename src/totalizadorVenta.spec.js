@@ -97,5 +97,8 @@ describe("Totalizador ventas", () => {
     it("Debería retornar un impuesto del 8.00% ya que el estado es NV", () => {
         expect(ObtenerImpuestoPorEstado('NV')).toEqual(0.08);
     });
+    it("Debería retornar un impuesto del 6.25% ya que el estado es TX", () => {
+        expect(ObtenerImpuestoPorEstado('TX')).toEqual(0.0625);
+    });
     
 })
