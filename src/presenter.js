@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado, ObtenerPesoVolumetrico, obtenerCostoDeEnvioPorUnidad, obtenerCostoEnvioNeto, obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado, ObtenerPesoVolumetrico, obtenerCostoDeEnvioPorUnidad, obtenerCostoEnvioNeto, obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento,obtenerDescuentoPor3Factores} from "./totalizadorVenta.js";
 
 const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");
@@ -20,6 +20,7 @@ const resultadoPrecioDeEnvioPorUnidad=document.querySelector("#resultadoPrecioDe
 const resultadoPrecioDeEnvioNeto=document.querySelector("#resultadoPrecioDeEnvioNeto");
 const resultadoDescuentoPorcentualEnvioPorCliente=document.querySelector("#resultadoDescuentoPorcentualEnvioPorCliente")
 const resultadoDescuentoEnvioPorCliente=document.querySelector("#resultadoDescuentoEnvioPorCliente")
+const descuentoMontoFijo=document.querySelector("#descuentoMontoFijo")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -30,7 +31,7 @@ form.addEventListener("submit", (event) => {
     
     resultadoPrecioNeto.innerHTML = obtenerPrecioNeto(cantidadItemValue,precioItemValue).toString();
     console.log(resultadoPrecioNeto.textContent)
-    if (ObtenerDescuentos(resultadoPrecioNeto.textContent)!=="No tiene descuento por cantidad"){
+    if (ObtenerDescuentos(resultadoPrecioNeto.textContent)!=="No tiene descuento por precio neto"){
       resultadoDescuentoPorPrecioNeto.innerHTML = obtenerPrecioNetoAplicandoDescuento(Number.parseFloat(resultadoPrecioNeto.textContent),ObtenerDescuentos(resultadoPrecioNeto.textContent)).toString() ; 
       resultadoDescuentoPorcentualPorPrecioNeto.innerHTML=(ObtenerDescuentos(resultadoPrecioNeto.textContent)*100).toString()
     }
@@ -53,6 +54,8 @@ form.addEventListener("submit", (event) => {
 
     resultadoDescuentoPorcentualEnvioPorCliente.innerHTML = (obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente.value)*100)
     resultadoDescuentoEnvioPorCliente.innerHTML=obtenerEnvioNetoAplicandoDescuento(resultadoPrecioDeEnvioNeto.textContent,obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente.value))
+
+    descuentoMontoFijo.innerHTML=obtenerDescuentoPor3Factores(tipoCliente.value,resultadoPrecioNeto.textContent,categoriaItem.value)
   }
   else{
     precioItem.value = "";

@@ -30,7 +30,7 @@ function ObtenerDescuentos(resultadoPrecioNeto)
    const diezPorciento = 0.1
    const quincePorciento= 0.15
    if (resultadoPrecioNeto <1000) {
-      return "No tiene descuento por cantidad"
+      return "No tiene descuento por precio neto"
    }
    if(resultadoPrecioNeto >= 1000 && resultadoPrecioNeto < 3000)
    {
@@ -242,6 +242,10 @@ function obtenerDescuentoPor3Factores(tipoCliente,precioNeto,categoria)
    else if (tipoCliente==="Especial" && precioNeto>7000 && categoria==="Electronicos")
    {
       return 200
+   }
+   else
+   {
+      return 0
    }
 }
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento,obtenerDescuentoPor3Factores};
