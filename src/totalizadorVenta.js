@@ -225,5 +225,9 @@ function obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente){
    {
       return uno
    }
+   else if (tipoCliente==="Especial")
+   {
+      return unopuntocinco
+   }
 }
 export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente};
