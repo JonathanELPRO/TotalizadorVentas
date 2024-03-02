@@ -16,7 +16,7 @@ form.addEventListener("submit", (event) => {
     
     resultadoPrecioNeto.innerHTML = obtenerPrecioNeto(cantidadItemValue,precioItemValue).toString();
     console.log(resultadoPrecioNeto.textContent)
-    if (ObtenerDescuentos(cantidadItemValue)!=="No tiene descuento por cantidad"){
+    if (ObtenerDescuentos(resultadoPrecioNeto.textContent)!=="No tiene descuento por cantidad"){
       resultadoDescuentoPorCantidad.innerHTML = obtenerPrecioNetoAplicandoDescuento(Number.parseFloat(resultadoPrecioNeto.textContent),ObtenerDescuentos(resultadoPrecioNeto.textContent)).toString() ; 
       resultadoDescuentoPorcentualPorCantidad.innerHTML=(ObtenerDescuentos(resultadoPrecioNeto.textContent)*100).toString()
     }
