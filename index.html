@@ -16,6 +16,13 @@
         <option value="Vestimenta">Vestimenta</option>
         <option value="Varios">Varios</option>
       </select>
+      <select id="codigoEstado">
+        <option value="UT">UT</option>
+        <option value="NV">NV</option>
+        <option value="TX">TX</option>
+        <option value="AL">AL</option>
+        <option value="CA">CA</option>
+      </select>
       <input type="submit" value="Totalizar" id="totalizar-button" />
     </form>
     <div id="resultadoPrecioNeto"></div>
@@ -36,6 +43,11 @@
     <p>Cantidad de impuesto por categoria</p>
     <div id="resultadoImpuestoPorCategoria"></div>
 
+    <p>Porcentaje de impuesto por codigo de estado</p>
+    <div id="resultadoImpuestoPorcentualPorCodigoEstado"></div>
+    <p>Cantidad de impuesto por codigo de estado</p>
+    <div id="resultadoImpuestoPorCodigoEstado"></div>
+    
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>

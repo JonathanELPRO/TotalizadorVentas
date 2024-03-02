@@ -3,6 +3,7 @@ import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLa
 const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");
 const categoriaItem=document.querySelector("#categoriaItem");
+const codigoEstado=document.querySelector("#codigoEstado");
 const form = document.querySelector("#totalizador-form");
 const resultadoPrecioNeto = document.querySelector("#resultadoPrecioNeto");
 const resultadoDescuentoPorPrecioNeto = document.querySelector("#resultadoDescuentoPorPrecioNeto");
@@ -11,6 +12,8 @@ const resultadoDescuentoPorCategoria = document.querySelector("#resultadoDescuen
 const resultadoDescuentoPorcentualPorCategoria = document.querySelector("#resultadoDescuentoPorcentualPorCategoria");
 const resultadoImpuestoPorCategoria = document.querySelector("#resultadoImpuestoPorCategoria");
 const resultadoImpuestoPorcentualPorCategoria = document.querySelector("#resultadoImpuestoPorcentualPorCategoria");
+const resultadoImpuestoPorcentualPorCodigoEstado=document.querySelector("#resultadoImpuestoPorcentualPorCodigoEstado");
+const resultadoImpuestoPorCodigoEstado=document.querySelector("#resultadoImpuestoPorCodigoEstado");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -34,6 +37,9 @@ form.addEventListener("submit", (event) => {
     
     resultadoImpuestoPorCategoria.innerHTML = obtenerPrecioNetoConDescuentoAplicandoImpuesto(Number.parseFloat(resultadoPrecioNeto.textContent)-Number.parseFloat(resultadoDescuentoPorPrecioNeto.textContent)-Number.parseFloat(resultadoDescuentoPorCategoria.textContent),ObtenerImpuestoPorCategoria(categoriaItem.value)).toString() ; 
     resultadoImpuestoPorcentualPorCategoria.innerHTML=(Number.parseInt(ObtenerImpuestoPorCategoria(categoriaItem.value)*100)).toString()
+
+    resultadoImpuestoPorCodigoEstado.innerHTML = obtenerPrecioNetoConDescuentoAplicandoImpuesto(Number.parseFloat(resultadoPrecioNeto.textContent)-Number.parseFloat(resultadoDescuentoPorPrecioNeto.textContent)-Number.parseFloat(resultadoDescuentoPorCategoria.textContent),ObtenerImpuestoPorEstado(codigoEstado.value)).toString() ; 
+    resultadoImpuestoPorcentualPorCodigoEstado.innerHTML=(Number.parseFloat(ObtenerImpuestoPorEstado(codigoEstado.value)*100)).toString()
   }
   else{
     precioItem.value = "";
