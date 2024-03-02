@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadYPrecio,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadYPrecio,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria} from "./totalizadorVenta.js";
 
 const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");

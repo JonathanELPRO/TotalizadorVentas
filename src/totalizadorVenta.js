@@ -93,6 +93,36 @@ function ObtenerDescuentosPorCategoria(Categoria){
       return CeroPorciento
    }
 }
+function ObtenerImpuestoPorCategoria(Categoria) {
+   const CeroPorciento = 0;
+   const SietePorciento = 0.07;
+   const TresPorciento = 0.03;
+   const CuatroPorciento = 0.04;
+   const DosPorciento = 0.02;
+
+   if (Categoria === "Alimentos") {
+       return CeroPorciento;
+   }
+   if (Categoria === "Bebidas alcoholicas") {
+       return SietePorciento;
+   }
+   if (Categoria === "Material de escritorio") {
+       return CeroPorciento;
+   }
+   if (Categoria === "Muebles") {
+       return TresPorciento;
+   }
+   if (Categoria === "Electronicos") {
+       return CuatroPorciento;
+   }
+   if (Categoria === "Vestimenta") {
+       return DosPorciento;
+   }
+   if (Categoria === "Varios") {
+       return CeroPorciento;
+   }
+}
 
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria};
+
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria};
