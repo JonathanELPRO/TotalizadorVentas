@@ -1,10 +1,11 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado, ObtenerPesoVolumetrico, obtenerCostoDeEnvioPorUnidad, obtenerCostoEnvioNeto} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado, ObtenerPesoVolumetrico, obtenerCostoDeEnvioPorUnidad, obtenerCostoEnvioNeto, obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento} from "./totalizadorVenta.js";
 
 const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");
 const categoriaItem=document.querySelector("#categoriaItem");
 const codigoEstado=document.querySelector("#codigoEstado");
 const pesoVolumetrico=document.querySelector("#pesoVolumetrico");
+const tipoCliente=document.querySelector("#tipoCliente");
 const form = document.querySelector("#totalizador-form");
 const resultadoPrecioNeto = document.querySelector("#resultadoPrecioNeto");
 const resultadoDescuentoPorPrecioNeto = document.querySelector("#resultadoDescuentoPorPrecioNeto");
@@ -17,6 +18,8 @@ const resultadoImpuestoPorcentualPorCodigoEstado=document.querySelector("#result
 const resultadoImpuestoPorCodigoEstado=document.querySelector("#resultadoImpuestoPorCodigoEstado");
 const resultadoPrecioDeEnvioPorUnidad=document.querySelector("#resultadoPrecioDeEnvioPorUnidad");
 const resultadoPrecioDeEnvioNeto=document.querySelector("#resultadoPrecioDeEnvioNeto");
+const resultadoDescuentoPorcentualEnvioPorCliente=document.querySelector("#resultadoDescuentoPorcentualEnvioPorCliente")
+const resultadoDescuentoEnvioPorCliente=document.querySelector("#resultadoDescuentoEnvioPorCliente")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -47,6 +50,9 @@ form.addEventListener("submit", (event) => {
 
     resultadoPrecioDeEnvioPorUnidad.innerHTML = obtenerCostoDeEnvioPorUnidad(pesoVolumetricoValue)
     resultadoPrecioDeEnvioNeto.innerHTML=obtenerCostoEnvioNeto(resultadoPrecioDeEnvioPorUnidad.textContent,cantidadItemValue)
+
+    resultadoDescuentoPorcentualEnvioPorCliente.innerHTML = (obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente.value)*100)
+    resultadoDescuentoEnvioPorCliente.innerHTML=obtenerEnvioNetoAplicandoDescuento(resultadoPrecioDeEnvioNeto.textContent,obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente.value))
   }
   else{
     precioItem.value = "";

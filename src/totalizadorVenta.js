@@ -210,9 +210,9 @@ function obtenerCostoEnvioNeto(costoEnvioPorUnidad,cantidadItems){
 }
 function obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente){
    const cero=0
-   const ceropuntocinco=0.5
-   const uno=1
-   const unopuntocinco=1.5
+   const ceropuntocinco=0.005
+   const uno=0.01
+   const unopuntocinco=0.015
    if (tipoCliente==="Normal")
    {
       return cero
@@ -230,4 +230,7 @@ function obtenerDescuentoDeEnvioNetoPorTipoCliente(tipoCliente){
       return unopuntocinco
    }
 }
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente};
+function obtenerEnvioNetoAplicandoDescuento(envioNeto,porcentajeDescuento){
+   return envioNeto*porcentajeDescuento
+}
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadElPrecioYPeso,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico,obtenerCostoEnvioNeto,obtenerDescuentoDeEnvioNetoPorTipoCliente,obtenerEnvioNetoAplicandoDescuento};

@@ -134,14 +134,14 @@ describe("Totalizador ventas", () => {
         expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Normal")).toEqual(0);
     });
     it("Deberia retornar un descuento porcentual del 0.5% en el costo de envio neto dado un cliente Recurrente", () => {
-        expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Recurrente")).toEqual(0.5);
+        expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Recurrente")).toEqual(0.005);
     });
     it("Deberia retornar un descuento porcentual del 1% en el costo de envio neto dado un cliente Antiguo recurrente", () => {
-        expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Antiguo recurrente")).toEqual(1);
+        expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Antiguo recurrente")).toEqual(0.01);
     });
 
     it("Deberia retornar un descuento porcentual del 1.5% en el costo de envio neto dado un cliente Especial", () => {
-        expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Especial")).toEqual(1.5);
+        expect(obtenerDescuentoDeEnvioNetoPorTipoCliente("Especial")).toEqual(0.015);
     });
 
     
