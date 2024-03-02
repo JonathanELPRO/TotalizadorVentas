@@ -58,5 +58,34 @@ function obtenerPrecioNetoAplicandoDescuento(precioNeto,porcentajeDescuento){
    return precioNeto*porcentajeDescuento
 }
 
+function ObtenerDescuentosPorCategoria(Categoria){
+   const Dosporciento = 0.02
+   const CeroPorciento = 0
+   const UnoPuntoCinco = 1.5
+   const UnPorciento = 1
+   
+   if(Categoria === "Alimento"){
+      return Dosporciento
+   }
+   if(Categoria === "Bebidas alcholicas"){
+      return CeroPorciento
+   }
+   if(Categoria === "Materia de escritorio"){
+      return UnoPuntoCinco
+   }
+   if(Categoria === "Muebles"){
+      return CeroPorciento
+   }
+   if(Categoria === "Electronicos"){
+      return UnPorciento
+   }
+   if(Categoria === "Vestimenta"){
+      return CeroPorciento
+   }
+   if(Categoria === "Varios"){
+      return CeroPorciento
+   }
+   
+}
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento};
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria};
