@@ -90,5 +90,9 @@ describe("Totalizador ventas", () => {
     it("Debería retornar un impuesto del 0% ya que la categoría es Varios", () => {
         expect(ObtenerImpuestoPorCategoria('Varios')).toEqual(0);
     });
+
+    it("Debería retornar un impuesto del 6.65% ya que el estado es UT", () => {
+        expect(ObtenerImpuestoPorEstado('UT')).toEqual(0.0665);
+    });
     
 })
