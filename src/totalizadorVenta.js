@@ -197,13 +197,15 @@ function obtenerCostoDeEnvioPorUnidad(pesoVolumetrico)
    {
       return nueve
    }
-   function ObtenerPesoVolumetrico(pesoVolumetrico) {
-      if(pesoVolumetrico > 0)
-      {
-         return pesoVolumetrico
-      }
-      return -1;
-   }
-   
 }
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad};
+function ObtenerPesoVolumetrico(pesoVolumetrico) {
+   if(pesoVolumetrico > 0)
+   {
+      return pesoVolumetrico
+   }
+   return -1;
+}
+function obtenerCostoEnvioNeto(costoEnvioPorUnidad,cantidadItems){
+   return costoEnvioPorUnidad*cantidadItems
+}
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico};

@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadYPrecio,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto, sonValidosLaCantidadYPrecio,ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,ObtenerImpuestoPorEstado,obtenerCostoDeEnvioPorUnidad,ObtenerPesoVolumetrico} from "./totalizadorVenta.js";
 
 describe("Totalizador ventas", () => {
 
@@ -124,6 +124,8 @@ describe("Totalizador ventas", () => {
     it("Debería retornar un costo de envio por unidad igual a 9$, probando con un valor de peso volumetrico igual a 1000", () => {
         expect(obtenerCostoDeEnvioPorUnidad(1000)).toEqual(9);
     });
-
+    it("Deberia retornar el peso volumetrico que ingreso el usuario salvo pusiese algo erroneo", () => {
+        expect(ObtenerPesoVolumetrico(2000)).toEqual(2000);
+    });
     
 })
