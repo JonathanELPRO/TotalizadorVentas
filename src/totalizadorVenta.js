@@ -138,10 +138,12 @@ function obtenerPrecioNetoConDescuentoAplicandoImpuesto(precioNetoConDescuento,p
 function ObtenerImpuestoPorEstado(CodigoEstado) {
    const UT = 0.0665;
 
-   if (CodigoEstado === "UT") {
-       return UT;
-   } else{
-       return 0;
+   if (CodigoEstado === "UT") 
+   {
+      return UT;
+   } else
+   {
+      return 0;
    }
 }
 
