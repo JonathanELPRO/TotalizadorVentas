@@ -152,10 +152,10 @@ function ObtenerImpuestoPorEstado(CodigoEstado) {
    {
       return NV;
    }
-   else if (estado === "AL") 
+   else if (CodigoEstado === "AL") 
    {
       return AL;
-   } else if (estado === "CA") 
+   } else if (CodigoEstado === "CA") 
    {
       return CA;
    }
