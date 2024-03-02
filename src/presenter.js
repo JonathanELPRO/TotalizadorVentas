@@ -1,4 +1,4 @@
-import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadYPrecio,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria} from "./totalizadorVenta.js";
+import {ObtenerCantidadItems,ObtenerPrecioDeItem, obtenerPrecioNeto,sonValidosLaCantidadYPrecio,obtenerPrecioNetoAplicandoDescuento, ObtenerDescuentos,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto} from "./totalizadorVenta.js";
 
 const cantidadItem = document.querySelector("#cantidadItem");
 const precioItem = document.querySelector("#precioItem");
@@ -9,6 +9,8 @@ const resultadoDescuentoPorPrecioNeto = document.querySelector("#resultadoDescue
 const resultadoDescuentoPorcentualPorPrecioNeto=document.querySelector("#resultadoDescuentoPorcentualPorPrecioNeto");
 const resultadoDescuentoPorCategoria = document.querySelector("#resultadoDescuentoPorCategoria");
 const resultadoDescuentoPorcentualPorCategoria = document.querySelector("#resultadoDescuentoPorcentualPorCategoria");
+const resultadoImpuestoPorCategoria = document.querySelector("#resultadoImpuestoPorCategoria");
+const resultadoImpuestoPorcentualPorCategoria = document.querySelector("#resultadoImpuestoPorcentualPorCategoria");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -30,7 +32,8 @@ form.addEventListener("submit", (event) => {
     resultadoDescuentoPorCategoria.innerHTML = obtenerPrecioNetoAplicandoDescuento(Number.parseFloat(resultadoPrecioNeto.textContent),ObtenerDescuentosPorCategoria(categoriaItem.value)).toString() ; 
     resultadoDescuentoPorcentualPorCategoria.innerHTML=(ObtenerDescuentosPorCategoria(categoriaItem.value)*100).toString()
     
-    
+    resultadoImpuestoPorCategoria.innerHTML = obtenerPrecioNetoConDescuentoAplicandoImpuesto(Number.parseFloat(resultadoPrecioNeto.textContent)-Number.parseFloat(resultadoDescuentoPorPrecioNeto.textContent)-Number.parseFloat(resultadoDescuentoPorCategoria.textContent),ObtenerImpuestoPorCategoria(categoriaItem.value)).toString() ; 
+    resultadoImpuestoPorcentualPorCategoria.innerHTML=(Number.parseInt(ObtenerImpuestoPorCategoria(categoriaItem.value)*100)).toString()
   }
   else{
     precioItem.value = "";

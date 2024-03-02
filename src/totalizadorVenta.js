@@ -131,6 +131,9 @@ function ObtenerImpuestoPorCategoria(Categoria) {
    }
 }
 
+function obtenerPrecioNetoConDescuentoAplicandoImpuesto(precioNetoConDescuento,porcentajeImpuesto){
+   return precioNetoConDescuento*porcentajeImpuesto
+}
 
 
-export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria};
+export  {ObtenerCantidadItems,ObtenerPrecioDeItem,obtenerPrecioNeto,sonValidosLaCantidadYPrecio,ObtenerDescuentos,obtenerPrecioNetoAplicandoDescuento,ObtenerDescuentosPorCategoria,ObtenerImpuestoPorCategoria,obtenerPrecioNetoConDescuentoAplicandoImpuesto};
